@@ -1,43 +1,194 @@
-/* Header Styling */
-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-header nav {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-}
-
-header ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
+/* CSS Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+
+}
+/* Global Colors */
+:root {
+    --primary-color: #f70000;
+    --secondary-color: #666;
+    --accent-color: #007bff;
+    --background-color: #fff;
+    --text-color: #333;
+    --border-color: #ddd;
+    --red-50: #ffe5e5;
+    --red-100: #ffcccc;
+    --red-200: #ff9999;
+    --red-300: #ff6666;
+    --red-400: #ff3333;
+    --red-500: #f70000;
+    --red-600: #cc0000;
+    --red-700: #990000;
+    --red-800: #660000;
+    --red-900: #330000;
 }
 
-header a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: opacity 0.3s ease;
+/* Global Fonts */
+:root {
+    --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    --font-family-mono: 'Courier New', monospace;
+    --font-size-base: 16px;
+    --font-size-small: 14px;
+    --font-size-large: 18px;
+    --line-height-base: 1.6;
 }
 
-header a:hover {
-    opacity: 0.8;
+.header {
+display: flex;
+align-items: center;
+justify-content:space-around;
+width: 100%; /* Limits the width */
+padding-left: 20px; /* Prevents text from hitting screen edges */
+padding-right: 20px;
+background-color: var(--primary-color);
+
 }
+.logo-img {
+height: 50px; /* Adjust as needed */
+width: auto; /* Maintains aspect ratio */
+border-radius: 100%;
+}
+
+
+.navbar a {
+    text-decoration: none; 
+    color: var(--red-100);
+    font-size: var(--font-size-large);
+    font-weight: bold;
+    color: snow;
+    font-family: var(--font-family-base);
+    padding: 10px 15px;
+}
+
+.landing-page {
+    height: 100vh;
+    display: flex;
+    direction:column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 20px;
+}
+
+.left {
+    align-self: center;
+    width: 50%;
+    margin-left: 10%;
+}
+.left h1{
+    color: var(--primary-color);
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+.left p {
+    color: var(--secondary-color);
+    font-size: var(--font-size-large);
+    margin-bottom: 30px;
+}
+
+/* CSS */
+.cta-button {
+  background-color: #ff0606;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: 0;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.cta-button:hover,
+.cta-button:focus {
+  background-color: #00ff80;
+}
+
+.right {
+    width: 40%;
+}
+.right img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+
+}
+
+
+.container-features {
+    height: 100vh;
+}
+.container-features h2{
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;    
+
+}
+.container-feat {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 3rem;
+    padding: 1rem;
+    justify-items: center;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    max-width: 300px;
+}
+
+.feature-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.feature h3 {
+    color: var(--primary-color);
+    font-size: var(--font-size-large);
+    margin-bottom: 0.5rem;
+}
+
+.feature p {
+    color: var(--secondary-color);
+    font-size: var(--font-size-small);
+}
+
+@media (max-width: 768px) {
+    .container-feat {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-feat {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+}
+    
