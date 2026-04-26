@@ -24,6 +24,9 @@
     --red-700: #990000;
     --red-800: #660000;
     --red-900: #330000;
+    /* Colors */
+  --primary-button-red: #f1081c;    /* Main brand color */
+  --dark-hover-button-red: #b91c1c;       /* Para sa hover effect */
 }
 
 /* Global Fonts */
@@ -36,89 +39,98 @@
     --line-height-base: 1.6;
 }
 
-.header {
-display: flex;
-align-items: center;
-justify-content:space-around;
-width: 100%; /* Limits the width */
-padding-left: 20px; /* Prevents text from hitting screen edges */
-padding-right: 20px;
-background-color: var(--primary-color);
 
-}
 .logo-img {
-height: 50px; /* Adjust as needed */
-width: auto; /* Maintains aspect ratio */
+height: 50px;
+width: auto; 
 border-radius: 100%;
 }
 
 
-.navbar a {
-    text-decoration: none; 
-    color: var(--red-100);
-    font-size: var(--font-size-large);
-    font-weight: bold;
-    color: snow;
-    font-family: var(--font-family-base);
-    padding: 10px 15px;
-}
+
+        .nav-bar {
+            background-size: cover;
+            background-color: #f8f9fa; 
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000; 
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+
+  
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        /* Styling for individual navigation links */
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #f70101; /* Example link color */
+            font-size: 16px;
+        }
+
+        /* Styling for the primary CTA button */
+        .cta-button {
+            background-color: var(--primary-button-red);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
 
 .landing-page {
     height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/landing-landscape-2.jpg');
+    background-size: cover; 
+    background-position: center;
     display: flex;
     direction:column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     padding: 60px 20px;
 }
 
-.left {
-    align-self: center;
+.landing-center {
+    text-align: center;
     width: 50%;
-    margin-left: 10%;
 }
-.left h1{
-    color: var(--primary-color);
+.landing-center h1 {
+    color: white;
     font-size: 3rem;
     margin-bottom: 20px;
 }
-.left p {
-    color: var(--secondary-color);
+.landing-center p {
+    color:whitesmoke;
     font-size: var(--font-size-large);
     margin-bottom: 30px;
 }
 
-/* CSS */
-.cta-button {
-  background-color: #ff0606;
-  border-radius: 8px;
-  border-style: none;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  height: 40px;
-  line-height: 20px;
-  list-style: none;
-  margin: 0;
-  outline: none;
-  padding: 10px 16px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  transition: color 100ms;
-  vertical-align: baseline;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
 
-.cta-button:hover,
-.cta-button:focus {
-  background-color: #00ff80;
+.cta-button:hover {
+  background-color: var(--dark-hover-button-red);
 }
 
 .right {
@@ -172,6 +184,7 @@ border-radius: 100%;
 .feature p {
     color: var(--secondary-color);
     font-size: var(--font-size-small);
+    
 }
 
 
